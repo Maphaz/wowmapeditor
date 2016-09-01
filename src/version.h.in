@@ -1,0 +1,11 @@
+#ifndef _VERSION_
+#define _VERSION_
+
+#define VERSION_MAJOR "@WowMapEditor_VERSION_MAJOR@"
+#define VERSION_MINOR "@WowMapEditor_VERSION_MINOR@"
+#define VERSION_PATCH "@WowMapEditor_VERSION_PATCH@"
+#define VERSION_HASH  "@ver_hash@"
+
+#define VERSION_STR VERSION_MAJOR "." VERSION_MINOR "." VERSION_PATCH
+
+#endif /* _VERSION_ */
