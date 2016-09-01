@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <SDL.h>
 #include <GL/glew.h>
+#include "version.h"
 
 int main(void)
 {
@@ -10,7 +11,7 @@ int main(void)
 	SDL_Init(SDL_INIT_VIDEO);
 
 	window = SDL_CreateWindow(
-		"Wow Map Editor",
+		"Wow Map Editor " VERSION_STR,
 		SDL_WINDOWPOS_UNDEFINED,
 		SDL_WINDOWPOS_UNDEFINED,
 		800,
@@ -29,26 +30,21 @@ int main(void)
 	bool running = true;
 	SDL_Event e;
 
-	GLenum err=glewInit();
-	if(err!=GLEW_OK) {
+	GLenum err = glewInit();
+	if (err != GLEW_OK) {
 		std::cerr << "Could not initialize glew: " << glewGetErrorString(err) << std::endl;
 		return EXIT_FAILURE;
 	}
 
 	std::cout << "Using GLEW " << glewGetString(GLEW_VERSION) << std::endl;
 
-	if (GLEW_VERSION_1_3)
-	{
-
-		/* Yay! OpenGL 1.3 is supported! */
-	}
-
-
 	glClearColor(0.15, 0.3, 0.7, 1.0);
 
-	while (running) {
+	while (running)
+	{
 		SDL_PollEvent(&e);
-		if (e.type == SDL_QUIT) {
+		if (e.type == SDL_QUIT)
+		{
 			running = false;
 		}
 
